@@ -1,0 +1,36 @@
+<h2>Forecast for {{ weatherResult.city.name }} ({{ weatherResult.city.country }})</h2>
+<hr/>
+<b>Days:</b> <a href="#/forecast/2" style="padding: 5px 10px;" ng-class="{ 'bg-primary': days === '2' }">2</a> | <a href="#/forecast/5" style="padding: 5px 10px;" ng-class="{ 'bg-primary': days === '5' }">5</a> | <a href="#/forecast/7" style="padding: 5px 10px;" ng-class="{ 'bg-primary': days === '7' }">7</a>
+
+<br><br>
+
+<div ng-repeat="w in weatherResult.list">
+
+	<div class="row">
+
+		<div class="col-md-12">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{ convertToDate(w.dt) | date: 'MMM d, y' }}</h3>
+				</div>
+				<div class="panel-body">
+
+					<p>Weather: <b>{{ w.weather[0].main }}</b></p>
+
+					<img style="height: 70px;" src="http://127.0.0.1/angular/images/{{ w.weather[0].icon }}.png" alt="weather-icon"/>
+
+					<p>Desciption: {{ w.weather[0].description }}</p>
+
+					<p><span style="padding: 5px;" class="bg-danger text-danger">Maximum Temperature: {{ convertToCelsius(w.temp.max) }} C</span></p>
+					
+					<p><span style="padding: 5px;" class="bg-info text-info">Minimum Temperature: {{ convertToCelsius(w.temp.min) }} C</span></p>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

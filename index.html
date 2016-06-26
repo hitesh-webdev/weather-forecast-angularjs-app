@@ -1,0 +1,41 @@
+<html ng-app="weatherApp">
+
+	<head>
+		<title>Weather Forecast Angular App</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-route.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-resource.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+	</head>
+
+	<body>
+
+		<header>
+
+			<div class="navbar navbar-default">
+				<div class="container">
+					<a class="navbar-brand" href="#/">AngularJS Weather</a>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active">
+							<a href="#/">Search</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</header>
+
+		<div class="container">
+			
+			<div ng-view></div>
+
+		</div>
+
+
+	</body>
+
+</html>
